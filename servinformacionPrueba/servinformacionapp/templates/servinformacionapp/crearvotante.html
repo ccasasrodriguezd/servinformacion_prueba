@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello {{ user.username }}</h2>
+    <h2>formulario de registro de votantes</h2>
+  <div class="col-md-6 px-lg-3 px-0" >
+    <div class="banner-form-w3 ml-lg-5" >
+      <div class="padding" id="form">
+        <!--no tocar-->
+        <form action="{% url 'crear_votante' %}"  method="post">
+          {% csrf_token %}
+            <div class="form-label-group">
+            <input type="text" id="inputNombres" class="form-control" placeholder="Enter Nombres" name="nombres"required autofocus >
+            <label for="inputNombres">Nombres</label>
+              </div>
+            
+            <div class="form-label-group">
+                <input type="text" id="inputApellidos" class="form-control" placeholder="Enter Apellidos" name="apellidos"required>
+                <label for="inputPassword">Apellidos</label>
+            </div>
+            
+            <div class="form-label-group">
+                <input type="text" id="inputDireccion" class="form-control" placeholder="Enter Dirección" name="direccion"required>
+                <label for="inputDireccion">Dirección</label>
+            </div> 
+
+            <div class="form-label-group">
+                <input type="number" id="inputTelefono" class="form-control" placeholder="Enter Telefono" name="telefono"required>
+                <label for="inputTelefono">Telefono</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="number" id="inputIdentificacion" class="form-control" placeholder="Enter numero de identidad" name="identificacion"required>
+                <label for="inputIdentificacion">Numero de documento</label>
+            </div>
+
+        
+
+            <div class="form-label-group">
+                <select name="barrio" >
+                    {% for barrio in barrios %}
+                    <option value="{{ barrio.id }}">{{ barrio.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-label-group">
+                <select name="puesto" >
+                    {% for puesto in puestos %}
+                    <option value="{{ puesto.nombre }}">{{ puesto.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-label-group">
+                <input type="number" id="inputMesa" class="form-control" placeholder="Enter Mesa" name="mesa"required>
+                <label for="inputMesa">Mesa</label>
+            </div>
+
+            
+            <a href="{% url 'crear_votante' %}">
+                <button>Enviar</button>
+             </a>
+       <hr class="my-4">      
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

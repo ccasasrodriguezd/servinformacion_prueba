@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Client Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+	  <link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'servinformacionapp/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/css_slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pointofequilibrium/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Iniciar sesión</h2>
+
+  <h2>Login</h2>
+  <div class="col-md-6 px-lg-3 px-0" >
+    <div class="banner-form-w3 ml-lg-5" >
+      <div class="padding" id="form">
+        <!--no tocar-->
+        <form class="form-signin" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+            <div class="form-label-group">
+            <input type="text" id="inputUsername" class="form-control" placeholder="Enter Username" name="username"required autofocus >
+            <label for="inputUsername">Username</label>
+              </div>
+            
+              <div class="form-label-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password" name="password"required>
+              <label for="inputPassword">Password</label>
+              </div>
+            
+              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="login">Submit</button>
+       <hr class="my-4">      
+      </form>
+    </div>
+  </div>
+</div>
+  
+</body>
+</html>

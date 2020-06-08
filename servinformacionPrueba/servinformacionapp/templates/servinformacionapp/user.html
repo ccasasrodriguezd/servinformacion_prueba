@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+    <ul class="menu ml-auto mt-1">
+        <li class="">Hello {{ user.username }}</li>
+        
+        {% if user.is_superuser %}
+                <li class="">Eres un usuario superadminstrador, click <a href="{% url 'admin:index' %}">aquí</a> para la vista de superadmin <a href="{% url 'admin:index' %}">admin</a></li>
+                
+              {% endif %}
+        <li class=""><a href="{% url 'logout' %}">logout</a></li>
+        
+        
+        <a href="{% url 'registrar_votante' %}">
+            <button>Registrar votante</button>
+         </a>
+      </ul>
+    </header>
+    <br>
+
+
+</body>
+</html>
